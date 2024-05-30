@@ -64,8 +64,8 @@ ckpt_filepath = do_train(
     extract_response_fn=extract_response_fn,
     tokenizer=tokenizer,
     model_name_or_path=pretrained_model_name,
-    batch_size=4,
-    max_epochs=10,
+    batch_size=1,
+    max_epochs=2,
     lr=3e-5,
     deterministic=True
 )

@@ -208,7 +208,8 @@ def generate(tokenizer, model, prompt_fn, extract_response_fn, prompt, generatio
     prompt = prompt_fn(prompt)
     input_tokens = tokenizer(
         prompt, add_special_tokens=False, return_tensors="pt"
-    ).to(torch.device("cuda"))
+    ).to(torch.device("cpu"))
+    # to(torch.device("cuda"))
     with torch.inference_mode():
         generated_ids = model.generate(**input_tokens, generation_config=generation_config)
     raw_pred = tokenizer.batch_decode(

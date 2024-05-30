@@ -1,0 +1,48 @@
+{
+    "os": "macOS-14.1.1-arm64-arm-64bit",
+    "python": "3.11.4",
+    "heartbeatAt": "2024-05-26T22:01:55.052085",
+    "startedAt": "2024-05-26T22:01:53.651524",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "codePathLocal": null,
+    "git": {
+        "remote": "https://github.com/teddy-f-47/self-learning-llm-public.git",
+        "commit": "560b4a08db6aa58437290c88f6e2e9c1b9cd6287"
+    },
+    "email": "jyvaishu@gmail.com",
+    "root": "/Users/jyvaishu/Desktop/MSDS/IBM_Research_Project/self-learning-llm-public",
+    "host": "Vaishnaves-MacBook-Pro.local",
+    "username": "jyvaishu",
+    "executable": "/Users/jyvaishu/Desktop/MSDS/IBM_Research_Project/self-learning-llm-public/env/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "cpu_freq": {
+        "current": 3504,
+        "min": 702,
+        "max": 3504
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3504,
+            "min": 702,
+            "max": 3504
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 460.4317207336426,
+            "used": 13.489212036132812
+        }
+    },
+    "gpuapple": {
+        "type": "Apple M2 Pro",
+        "vendor": "sppci_vendor_Apple"
+    },
+    "memory": {
+        "total": 16.0
+    }
+}

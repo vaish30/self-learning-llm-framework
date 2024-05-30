@@ -59,7 +59,17 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 for param in model.parameters():
     param.requires_grad = False
-model.to(torch.device("cuda"))
+# model.to(torch.device("cuda"))
+
+# Check if CUDA is available
+if torch.cuda.is_available():
+    # If CUDA is available, use it
+    device = torch.device("cuda")
+    print("CUDA is available. Using GPU.")
+else:
+    # If CUDA is not available, use CPU
+    device = torch.device("cpu")
+    print("CUDA is not available. Using CPU.")
 
 def prompt_fn(prompt):
     return f"<|system|>\nYou are a student who is eager to learn about new things.</s>\n<|user|>\n{prompt}</s>\n<|assistant|>\n"
@@ -81,7 +91,7 @@ def search_engine_fn(query: str) -> List[str]:
     return []
 
 
-num_iteration = 100
+num_iteration = 10 # 100
 
 wandb_logger = wandb.init(
     project="SelfLearningFramework_v2",

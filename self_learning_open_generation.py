@@ -13,7 +13,7 @@ from self_learning_utils import (
 
 
 def self_questioning_loop_open_generation(
-        tokenizer, model, prompt_fn, extract_response_fn, num_iteration=100,
+        tokenizer, model, prompt_fn, extract_response_fn, num_iteration=10, #100
         verbose=False, pretrained_model_name=None, generation_config=None
     ) -> Dict:
     h_scorer = HallucinationScorer()

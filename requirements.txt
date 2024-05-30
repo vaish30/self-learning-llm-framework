@@ -12,7 +12,6 @@ pandas
 numpy
 tqdm
 lxml
-nltk
 newspaper3k
 spacy>=3.3.3
 pydantic>=1.10.8
