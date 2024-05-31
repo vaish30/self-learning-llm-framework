@@ -1,30 +1,31 @@
-# Into the Unknown: Self-Learning Large Language Models
+# Self-Learning Large Language Models Framework
 
-***Teddy Ferdinan, Jan Kocoń, Przemysław Kazienko***
+***Vaishnave***
 
-<https://arxiv.org/abs/2402.09147>
+## Original Paper: <https://arxiv.org/abs/2402.09147>
 
-## Create a virtual environment (optional)
+## Steps to follow to set up the code
+- Set up conda environment and activate it
+  
+- Install System dependcies
+  sudo apt-get update
+  sudo apt-get -y install python-dev libxml2-dev libxslt-dev
 
-    - pip3 install virtualenv
-    - python3 -m venv env
+  curl https://raw.githubusercontent.com/codelucas/newspaper/master/download_corpora.py | python3
+  
+- Install python dependcies
+  - Check for torch installation
+  - Check for nltk installation
+  - run below steps
+    pip uninstall -y lxml
+    CFLAGS="-O0" pip install lxml
+    pip install -r requirements.txt
+    python -m spacy download en_core_web_sm
+    pip3 install --upgrade torch torchvision torchaudio
+    pip3 install datasets==2.16
+    pip3 install bitsandbytes loralib peft trl
 
-## Activate the virtual environment (optional)
-
-    - For Windows: .\env\Scripts\activate
-    - For Linux: source env/bin/activate
-
-## Deactivate the virtual environment (optional)
-
-    - deactivate
-
-## Setup environment
-
-`sudo apt-get update; sudo apt-get -y install python-dev libxml2-dev libxslt-dev; curl https://raw.githubusercontent.com/codelucas/newspaper/master/download_corpora.py | python3; pip uninstall -y lxml; CFLAGS="-O0" pip install lxml; pip install -r requirements.txt; python -m spacy download en_core_web_sm; pip3 install --upgrade torch torchvision torchaudio; pip3 install datasets==2.16; pip3 install bitsandbytes loralib peft trl`
-
-## Running an experiment
-
-    - python3 -m DIRNAME.FILENAME
+- Running an experiment
     - python3 -m experiment_open_generation.experiment_IntelNeuralChat_open
     - python3 -m experiment_induced_generation.experiment_IntelNeuralChat_induced
     - python3 -m experiment_oracle_selected.experiment_IntelNeuralChat_oracle
@@ -70,7 +71,7 @@ Each file in each of these subdirectories is a pickle file, which when loaded wi
     > "average_score": float -- The average of sentence_scores, so the passage-level hallucination score
 ```
 
-## Running your own Self-Learning LLM
+## Running own Self-Learning LLM
 
 Refer to the experiment files and `experiment_training.py` to see how you can run Self-Questioning, Knowledge Searching, and Model Training. Refer to `experiment_post_training.py` if you would like to perform hallucination scoring on the model after training.
 
@@ -239,10 +240,6 @@ while True:
     })
     ...
 ```
-
-## Disclaimer
-
-This repository was created for reproducibility purposes of our paper. All work is intended only for scientific research. We are not responsible for the actions of other parties who use this repository.
 
 ## Citation
 
